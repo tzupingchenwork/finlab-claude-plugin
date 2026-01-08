@@ -55,7 +55,7 @@ print(f"MDD: {stats['max_drawdown']:.2%}")
 report
 ```
 
-## Core Workflow: 4-Step Strategy Development
+## Core Workflow: 5-Step Strategy Development
 
 ### Step 1: Fetch Data
 
@@ -179,12 +179,37 @@ print(f"MDD: {stats['max_drawdown']:.2%}")     # same name
 
 See [backtesting-reference.md](backtesting-reference.md) for complete `sim()` API.
 
+### Step 5: Execute Orders (Optional)
+
+Convert backtest results to live trading:
+
+```python
+from finlab.online.order_executor import Position, OrderExecutor
+from finlab.online.sinopac_account import SinopacAccount
+
+# 1. Convert report to position
+position = Position.from_report(report, fund=1000000)
+
+# 2. Connect broker account
+acc = SinopacAccount()
+
+# 3. Create executor and preview orders
+executor = OrderExecutor(position, account=acc)
+executor.create_orders(view_only=True)  # Preview first
+
+# 4. Execute orders (when ready)
+executor.create_orders()
+```
+
+See [trading-reference.md](trading-reference.md) for complete broker setup and OrderExecutor API.
+
 ## Documentation Structure
 
 This skill includes comprehensive reference documentation:
 
 - **[data-reference.md](data-reference.md)**: Complete data catalog (900+ columns across 80+ tables), `data.get()` usage, `data.universe()` filtering
 - **[backtesting-reference.md](backtesting-reference.md)**: `sim()` function API, all parameters, resampling strategies, metric extraction
+- **[trading-reference.md](trading-reference.md)**: Order execution, Position class, broker account setup (Esun/Sinopac/Masterlink/Fubon), OrderExecutor API
 - **[factor-examples.md](factor-examples.md)**: 60+ complete factor examples (momentum, value, quality, growth, technical)
 - **[dataframe-reference.md](dataframe-reference.md)**: All FinLabDataFrame methods with signatures and examples
 - **[factor-analysis-reference.md](factor-analysis-reference.md)**: Factor analysis tools (IC, Shapley values, centrality)
@@ -200,6 +225,9 @@ This skill includes comprehensive reference documentation:
 | Filter stocks by industry/market | [data-reference.md](data-reference.md) |
 | Configure backtest parameters | [backtesting-reference.md](backtesting-reference.md) |
 | Set stop-loss, take-profit, rebalancing | [backtesting-reference.md](backtesting-reference.md) |
+| Execute orders to broker | [trading-reference.md](trading-reference.md) |
+| Setup broker account (Esun/Sinopac/Masterlink/Fubon) | [trading-reference.md](trading-reference.md) |
+| Calculate position from backtest | [trading-reference.md](trading-reference.md) |
 | Find strategy examples | [factor-examples.md](factor-examples.md) |
 | Calculate moving averages, trends | [dataframe-reference.md](dataframe-reference.md) |
 | Select top N stocks | [dataframe-reference.md](dataframe-reference.md) |
