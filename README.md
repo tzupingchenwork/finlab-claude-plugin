@@ -3,13 +3,9 @@
   <a href="README.zh-TW.md"><img src="https://img.shields.io/badge/繁體中文-red?style=for-the-badge" alt="繁體中文"></a>
 </p>
 
-<p align="center">
-  <img src="assets/banner.png" alt="FinLab AI Plugin Banner" width="800">
-</p>
+# FinLab AI
 
-# FinLab AI Plugin
-
-> AI-powered quantitative trading skill for Taiwan stock market (台股)
+> Your AI's shortcut to mass-produce alpha-generating quant strategies.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai)
@@ -36,7 +32,7 @@ Add this to your MCP config (`~/.cursor/mcp.json`):
 {
   "mcpServers": {
     "finlab": {
-      "url": "https://finlab-ai-plugin.koreal6803.workers.dev/mcp"
+      "url": "https://finlab-ai.koreal6803.workers.dev/mcp"
     }
   }
 }
@@ -48,7 +44,7 @@ No installation needed - the MCP server is hosted remotely!
 
 Simply tell your AI assistant:
 
-> "Please look at https://github.com/koreal6803/finlab-ai-plugin and install the FinLab skill for me"
+> "Please look at https://github.com/koreal6803/finlab-ai and install the FinLab skill for me"
 
 This works with **Claude Code**, **ChatGPT Codex CLI**, **Gemini CLI**, and other AI coding assistants.
 
@@ -86,22 +82,22 @@ This works with **Claude Code**, **ChatGPT Codex CLI**, **Gemini CLI**, and othe
 
 ```bash
 # Add marketplace
-/plugin marketplace add koreal6803/finlab-ai-plugin
+/install marketplace add koreal6803/finlab-ai
 
-# Install plugin
-/plugin install finlab-plugin@finlab-plugins
+# Install
+/install finlab@finlab
 ```
 
 ### Option 2: ChatGPT Codex CLI
 
 ```bash
-git clone https://github.com/koreal6803/finlab-ai-plugin.git
-cd finlab-ai-plugin
+git clone https://github.com/koreal6803/finlab-ai.git
+cd finlab-ai
 ```
 
 Then tell Codex:
 ```
-請幫我安裝此finlab-plugin 裡的 skills
+請幫我安裝此 finlab 裡的 skills
 ```
 
 ### Option 3: Gemini CLI
@@ -111,9 +107,9 @@ Then tell Codex:
 npm install -g skill-porter
 
 # Clone and convert
-git clone https://github.com/koreal6803/finlab-ai-plugin.git
-cd finlab-ai-plugin
-skill-porter convert ./finlab-plugin/skills/finlab --to gemini --output ./finlab-gemini-extension
+git clone https://github.com/koreal6803/finlab-ai.git
+cd finlab-ai
+skill-porter convert ./finlab/skills/finlab --to gemini --output ./finlab-gemini-extension
 ```
 
 Then install the generated `finlab-gemini-extension` following Gemini CLI docs.
@@ -126,7 +122,7 @@ Add to `~/.cursor/mcp.json`:
 {
   "mcpServers": {
     "finlab": {
-      "url": "https://finlab-ai-plugin.koreal6803.workers.dev/mcp"
+      "url": "https://finlab-ai.koreal6803.workers.dev/mcp"
     }
   }
 }
@@ -143,7 +139,7 @@ Restart Cursor and start using FinLab documentation in your Agent.
 {
   "mcpServers": {
     "finlab": {
-      "url": "https://finlab-ai-plugin.koreal6803.workers.dev/mcp"
+      "url": "https://finlab-ai.koreal6803.workers.dev/mcp"
     }
   }
 }
@@ -153,8 +149,8 @@ Restart Cursor and start using FinLab documentation in your Agent.
 
 ```bash
 # Clone and install
-git clone https://github.com/koreal6803/finlab-ai-plugin.git
-cd finlab-ai-plugin
+git clone https://github.com/koreal6803/finlab-ai.git
+cd finlab-ai
 pip install -e .
 
 # Run the MCP server
@@ -173,7 +169,7 @@ export FINLAB_API_TOKEN="your_token_here"
 
 ## Documentation
 
-The plugin includes comprehensive reference docs:
+Comprehensive reference docs included:
 
 | Document | Content |
 |----------|---------|

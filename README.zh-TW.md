@@ -3,13 +3,9 @@
   <a href="README.zh-TW.md"><img src="https://img.shields.io/badge/繁體中文-red?style=for-the-badge" alt="繁體中文"></a>
 </p>
 
-<p align="center">
-  <img src="assets/banner.png" alt="FinLab AI Plugin Banner" width="800">
-</p>
+# FinLab AI
 
-# FinLab AI Plugin
-
-> AI 驅動的台股量化交易技能
+> 讓你的 AI 批量生產 alpha 策略的捷徑。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai)
@@ -36,7 +32,7 @@
 {
   "mcpServers": {
     "finlab": {
-      "url": "https://finlab-ai-plugin.koreal6803.workers.dev/mcp"
+      "url": "https://finlab-ai.koreal6803.workers.dev/mcp"
     }
   }
 }
@@ -48,7 +44,7 @@
 
 只要告訴你的 AI 助手：
 
-> 「請查看 https://github.com/koreal6803/finlab-ai-plugin 並幫我安裝 FinLab skill」
+> 「請查看 https://github.com/koreal6803/finlab-ai 並幫我安裝 FinLab skill」
 
 適用於 **Claude Code**、**ChatGPT Codex CLI**、**Gemini CLI** 及其他 AI 程式助手。
 
@@ -86,22 +82,22 @@
 
 ```bash
 # 新增 marketplace
-/plugin marketplace add koreal6803/finlab-ai-plugin
+/install marketplace add koreal6803/finlab-ai
 
-# 安裝 plugin
-/plugin install finlab-plugin@finlab-plugins
+# 安裝
+/install finlab@finlab
 ```
 
 ### 方式二：ChatGPT Codex CLI
 
 ```bash
-git clone https://github.com/koreal6803/finlab-ai-plugin.git
-cd finlab-ai-plugin
+git clone https://github.com/koreal6803/finlab-ai.git
+cd finlab-ai
 ```
 
 然後告訴 Codex：
 ```
-請幫我安裝此 finlab-plugin 裡的 skills
+請幫我安裝此 finlab 裡的 skills
 ```
 
 ### 方式三：Gemini CLI
@@ -111,9 +107,9 @@ cd finlab-ai-plugin
 npm install -g skill-porter
 
 # Clone 並轉換
-git clone https://github.com/koreal6803/finlab-ai-plugin.git
-cd finlab-ai-plugin
-skill-porter convert ./finlab-plugin/skills/finlab --to gemini --output ./finlab-gemini-extension
+git clone https://github.com/koreal6803/finlab-ai.git
+cd finlab-ai
+skill-porter convert ./finlab/skills/finlab --to gemini --output ./finlab-gemini-extension
 ```
 
 然後依照 Gemini CLI 文件安裝 `finlab-gemini-extension`。
@@ -126,7 +122,7 @@ skill-porter convert ./finlab-plugin/skills/finlab --to gemini --output ./finlab
 {
   "mcpServers": {
     "finlab": {
-      "url": "https://finlab-ai-plugin.koreal6803.workers.dev/mcp"
+      "url": "https://finlab-ai.koreal6803.workers.dev/mcp"
     }
   }
 }
@@ -143,7 +139,7 @@ skill-porter convert ./finlab-plugin/skills/finlab --to gemini --output ./finlab
 {
   "mcpServers": {
     "finlab": {
-      "url": "https://finlab-ai-plugin.koreal6803.workers.dev/mcp"
+      "url": "https://finlab-ai.koreal6803.workers.dev/mcp"
     }
   }
 }
@@ -153,8 +149,8 @@ skill-porter convert ./finlab-plugin/skills/finlab --to gemini --output ./finlab
 
 ```bash
 # Clone 並安裝
-git clone https://github.com/koreal6803/finlab-ai-plugin.git
-cd finlab-ai-plugin
+git clone https://github.com/koreal6803/finlab-ai.git
+cd finlab-ai
 pip install -e .
 
 # 執行 MCP server
@@ -173,7 +169,7 @@ export FINLAB_API_TOKEN="your_token_here"
 
 ## 文件說明
 
-Plugin 包含完整參考文件：
+包含完整參考文件：
 
 | 文件 | 內容 |
 |------|------|
