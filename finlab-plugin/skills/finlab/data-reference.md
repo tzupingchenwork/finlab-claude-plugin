@@ -42,6 +42,38 @@ foreign_investment = data.get('institutional_investors_trading_summary:外陸資
 
 ---
 
+## Data Discovery
+
+Use `data.search()` to programmatically find datasets from the Data Catalog.
+
+```python
+data.search(keyword: str = None) -> list
+```
+
+| Parameter | Description |
+|-----------|-------------|
+| `keyword` | Optional. Filter datasets by keyword (case-insensitive substring match). Returns all if omitted. |
+
+**Returns:** List of `"table:column"` strings, usable directly with `data.get()`.
+
+**Examples:**
+```python
+from finlab import data
+
+# List all available datasets
+all_data = data.search()
+
+# Search by keyword
+data.search('收盤')    # ['price:收盤價']
+data.search('營收')    # ['monthly_revenue:當月營收', ...]
+
+# Use result with data.get()
+results = data.search('收盤')
+df = data.get(results[0])
+```
+
+---
+
 ## Universe Filtering
 
 Limit the data fetch scope by market or industry category using a context manager or global settings.
