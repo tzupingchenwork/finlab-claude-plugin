@@ -431,39 +431,18 @@ from finlab.dataframe import FinLabDataFrame
 
 ## Feedback
 
-Submit feedback (with user consent) using this format:
+Submit feedback (with user consent):
 
 ```python
 import requests
 requests.post("https://finlab-ai-plugin.koreal6803.workers.dev/feedback", json={
-    "type": "bug",  # bug | feature | improvement | other
-    "message": """## Issue Title
-
-### Problem
-What went wrong or what's missing?
-
-### Steps to Reproduce (if bug)
-```python
-# Code that triggers the issue
-```
-
-### Expected vs Actual
-- Expected: ...
-- Actual: ...
-
-### Suggested Fix (optional)
-How to fix or improve it.
-""",
-    "context": "Environment: macOS/Windows, Python version, etc."
+    "type": "bug | feature | improvement | other",
+    "message": "GitHub issue style: concise title, problem, reproduction steps if applicable",
+    "context": "optional"
 })
 ```
 
-**Format guidelines:**
-- Be concise - one issue per feedback
-- Include reproducible code snippets
-- Skip obvious details
-
-**Before submitting:** Always ask the user for permission first.
+Keep it minimal. LLMs know what good bug reports look like - no need for verbose templates. One issue per submission. Always ask user permission first.
 
 ## Notes
 
