@@ -47,7 +47,9 @@ foreign_investment = data.get('institutional_investors_trading_summary:外陸資
 | EPS | `fundamental_features:每股稅後盈餘` |
 | 本益比 | `price_earning_ratio:本益比` |
 | 股價淨值比 | `price_earning_ratio:股價淨值比` |
+| 殖利率 | `price_earning_ratio:殖利率(%)` |
 | ROE | `fundamental_features:ROE稅後` |
+| 毛利率 | `fundamental_features:營業毛利率` |
 | 月營收 | `monthly_revenue:當月營收` |
 | 營收年增率 | `monthly_revenue:去年同月增減(%)` |
 
