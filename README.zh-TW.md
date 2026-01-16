@@ -41,9 +41,9 @@ cursor://anysphere.cursor-deeplink/mcp/install?name=finlab&config=eyJ1cmwiOiJodH
 
 只要告訴你的 AI 助手：
 
-> 「請查看 https://github.com/koreal6803/finlab-ai 並幫我安裝 FinLab skill」
+> 「請查看 https://github.com/koreal6803/finlab-ai 並幫我安裝 FinLab plugin」
 
-適用於 **Claude Code**、**ChatGPT Codex CLI**、**Gemini CLI** 及其他 AI 程式助手。
+適用於 **Claude Code**、**ChatGPT Codex CLI**、**Gemini CLI** 及其他 AI 程式助手。AI 應遵照下方[手動安裝](#手動安裝)指示進行。
 
 ## 功能特色
 
@@ -77,12 +77,21 @@ cursor://anysphere.cursor-deeplink/mcp/install?name=finlab&config=eyJ1cmwiOiJodH
 
 ### 方式一：Claude Code
 
+**CLI 命令：**
+
 ```bash
 # 新增 marketplace
-/install marketplace add koreal6803/finlab-ai
+claude plugin marketplace add koreal6803/finlab-ai
 
-# 安裝
-/install finlab@finlab
+# 安裝 plugin
+claude plugin install finlab-plugin@finlab-plugins
+```
+
+**或在對話中使用斜線命令：**
+
+```
+/plugin marketplace add koreal6803/finlab-ai
+/plugin install finlab-plugin@finlab-plugins
 ```
 
 ### 方式二：ChatGPT Codex CLI

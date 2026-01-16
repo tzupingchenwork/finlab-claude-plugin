@@ -41,9 +41,9 @@ No installation needed - the MCP server is hosted remotely!
 
 Simply tell your AI assistant:
 
-> "Please look at https://github.com/koreal6803/finlab-ai and install the FinLab skill for me"
+> "Please look at https://github.com/koreal6803/finlab-ai and install the FinLab plugin for me"
 
-This works with **Claude Code**, **ChatGPT Codex CLI**, **Gemini CLI**, and other AI coding assistants.
+This works with **Claude Code**, **ChatGPT Codex CLI**, **Gemini CLI**, and other AI coding assistants. AI should follow the [Manual Installation](#manual-installation) instructions below.
 
 ## Features
 
@@ -77,12 +77,21 @@ This works with **Claude Code**, **ChatGPT Codex CLI**, **Gemini CLI**, and othe
 
 ### Option 1: Claude Code
 
+**CLI commands:**
+
 ```bash
 # Add marketplace
-/install marketplace add koreal6803/finlab-ai
+claude plugin marketplace add koreal6803/finlab-ai
 
-# Install
-/install finlab@finlab
+# Install plugin
+claude plugin install finlab-plugin@finlab-plugins
+```
+
+**Or use slash commands in conversation:**
+
+```
+/plugin marketplace add koreal6803/finlab-ai
+/plugin install finlab-plugin@finlab-plugins
 ```
 
 ### Option 2: ChatGPT Codex CLI
